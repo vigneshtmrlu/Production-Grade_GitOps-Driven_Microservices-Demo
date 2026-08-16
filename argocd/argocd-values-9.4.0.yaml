@@ -190,8 +190,10 @@ configs:
     # -- Create the argocd-cm configmap for [declarative setup]
     create: true
     kustomize.buildOptions: "--enable-helm"
+
     # -- Annotations to be added to argocd-cm configmap
     annotations: {}
+
 
     # -- The name of tracking label used by Argo CD for resource pruning
     application.instanceLabelKey: argocd.argoproj.io/instance
@@ -2627,14 +2629,14 @@ server:
     # -- Gateway API parentRefs for the HTTPRoute
     ## Must reference an existing Gateway
     # @default -- `[]` (See [values.yaml])
-    parentRefs:
+    parentRefs: 
       - name: app-alb-gateway
         namespace: default
         sectionName: https
     # -- List of hostnames for the HTTPRoute
     # @default -- `[]` (See [values.yaml])
-    hostnames:
-      - argocd.devopsdock.site
+    hostnames: 
+      - argocd.anandb.site
     # -- HTTPRoute rules configuration
     # @default -- `[]` (See [values.yaml])
     rules:
